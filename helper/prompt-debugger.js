@@ -204,6 +204,9 @@ export class PromptDebugger {
 
         const filepath = path.join(this.outputDir, filename);
 
+        // Ensure output directory exists (prevents ENOENT when writing logs)
+        await fs.mkdir(path.dirname(filepath), { recursive: true });
+
         if (this.appendMode) {
             await fs.appendFile(filepath, content, 'utf8');
         } else {

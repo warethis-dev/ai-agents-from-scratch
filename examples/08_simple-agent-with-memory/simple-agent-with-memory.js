@@ -12,7 +12,7 @@ const model = await llama.loadModel({
         '..',
         '..',
         'models',
-        'Qwen3-1.7B-Q8_0.gguf'
+        'DeepSeek-R1-0528-Qwen3-8B-Q6_K.gguf'
     )
 });
 const context = await model.createContext({contextSize: 2000});
@@ -77,7 +77,7 @@ const saveMemory = defineChatSessionFunction({
 const functions = {saveMemory};
 
 // Example conversation
-const prompt1 = "Hi! My name is Alex and I love pizza.";
+const prompt1 = "Hi! My name is Brian and I love chocolate.";
 const response1 = await session.prompt(prompt1, {functions});
 console.log("AI: " + response1);
 

@@ -24,7 +24,7 @@ const session = new LlamaChatSession({
     contextSequence: context.getSequence(),
 });
 
-const prompt = `do you know node-llama-cpp`;
+const prompt = `do you know TypeScript?`;
 
 const a1 = await session.prompt(prompt);
 console.log("AI: " + a1);

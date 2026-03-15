@@ -14,7 +14,7 @@ const model = await llama.loadModel({
         '..',
         '..',
         'models',
-        'Qwen3-1.7B-Q8_0.gguf'
+        'DeepSeek-R1-0528-Qwen3-8B-Q6_K.gguf'
     )
 });
 const systemPrompt = `You are an expert logical and quantitative reasoner.
