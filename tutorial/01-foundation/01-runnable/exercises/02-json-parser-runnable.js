@@ -26,6 +26,8 @@ class JsonParserRunnable extends Runnable {
     constructor(options = {}) {
         // TODO: Call super()
         // TODO: Store options (like defaultValue)
+		super()
+		this.defaultValue = options.defaultValue || null;
     }
 
     async _call(input, config) {
@@ -33,6 +35,15 @@ class JsonParserRunnable extends Runnable {
         // TODO: Try to parse the JSON
         // TODO: If parsing fails, return null or defaultValue
         // TODO: Return the parsed object
+		if (typeof input !== 'string') {
+			throw new Error('Input must be a string');
+		}
+		try {
+			return JSON.parse(input);
+		} catch (error) {
+			return this.defaultValue;
+		}
+		
     }
 }
 

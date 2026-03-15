@@ -736,7 +736,7 @@ Now it's your turn! Complete these exercises to solidify your understanding.
 
 Create a Runnable that multiplies numbers by a factor.
 
-**Starter code in**: `exercises/01-echo-runnable.js`
+**Starter code in**: `exercises/01-multiplier-runnable.js`
 
 **Requirements**:
 - Takes a number as input

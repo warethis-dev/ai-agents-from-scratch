@@ -49,6 +49,7 @@ class MultiplierRunnable extends Runnable {
 class ObjectWrapperRunnable extends Runnable {
     async _call(input, config) {
         // TODO: Return an object with 'result' property
+        return { result: input };
     }
 }
 
@@ -61,6 +62,7 @@ class ObjectWrapperRunnable extends Runnable {
 class JsonStringifyRunnable extends Runnable {
     async _call(input, config) {
         // TODO: Convert input to JSON string
+        return JSON.stringify(input);
     }
 }
 
@@ -82,6 +84,11 @@ function createPipeline(factor = 3) {
     // TODO: Create instances of the Runnables
     // TODO: Chain them together with pipe()
     // TODO: Return the pipeline
+	const multiplier = new MultiplierRunnable(factor);
+	const wrapper = new ObjectWrapperRunnable();
+	const stringifier = new JsonStringifyRunnable();
+
+	return multiplier.pipe(wrapper).pipe(stringifier);
 }
 
 // ============================================================================

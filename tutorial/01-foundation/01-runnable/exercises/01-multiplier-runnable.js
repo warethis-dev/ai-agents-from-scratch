@@ -22,14 +22,15 @@ import { Runnable } from '../../../../src/index.js';
  */
 class MultiplierRunnable extends Runnable {
     constructor(factor) {
-        // TODO: Call super()
-        // TODO: Store the factor
+		super()
+		this.factor = factor
     }
 
     async _call(input, config) {
-        // TODO: Validate that input is a number
-        // TODO: Multiply input by this.factor
-        // TODO: Return the result
+		if (typeof input !== 'number') {
+            throw new Error('Input must be a number');
+        }
+        return input * this.factor;
     }
 }
 
